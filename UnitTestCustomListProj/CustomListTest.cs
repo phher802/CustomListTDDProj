@@ -165,7 +165,7 @@ namespace UnitTestCustomListProj
             int value3 = 6;
            
             
-            int expeted = 0;
+            int expected = 0;
             int actual;
 
             //Act
@@ -178,7 +178,7 @@ namespace UnitTestCustomListProj
             actual = myList.Count;
 
             // Assert
-            Assert.AreEqual(expeted, actual);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void Remove_PositiveInteger_CapacityOf4()
@@ -192,7 +192,7 @@ namespace UnitTestCustomListProj
             int value5 = 10;
 
 
-            int expeted = 4;
+            int expected = 4;
             int actual;
 
             //Act
@@ -207,13 +207,73 @@ namespace UnitTestCustomListProj
             actual = myList.Capacity;
 
             // Assert
-            Assert.AreEqual(expeted, actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_StringsFromList_CountOfOne()
+        {
+            //Arrange
+            CustomList<string> myList = new CustomList<string>();
+            string value1 = "Happy";
+            string value2 = "Turkey";
+            string value3 = "Day";
+            string value4 = "Everyone";
+           
+            int expected = 1;
+            int actual;
+
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            myList.Remove(value2);
+            myList.Remove(value3);
+            myList.Remove(value4);
+
+            actual = myList.Capacity;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_ListFromAnotherList_CapacityOf4()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value1 = 2;
+            int value2 = 4;
+            int value3 = 6;
+            int value4 = 8;
+
+            CustomList<int> my2ndList = new CustomList<int>();
+            int value5 = 1;
+            int value6 = 3;
+
+
+            int expected = 4;
+            int actual;
+
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            my2ndList.Add(value5);
+            my2ndList.Add(value6);
+            myList.Remove(value1);
+            myList.Remove(value2);
+
+            actual = myList.Capacity + my2ndList.Capacity;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
 
 
-
-
     }
-    
+
 }
 
