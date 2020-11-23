@@ -73,7 +73,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Add_StringToList_CountOf6()
+        public void Add_StringToList_DisplayStringOfIndex3()
         {
             //Arrange - variables, objects, etc.
             CustomList<string> myList = new CustomList<string>();
@@ -82,7 +82,7 @@ namespace UnitTestCustomListProj
             string how = "How";
             string are = "are";
             string you  = "you";
-            string quetionMark = "? ";
+            string questionMark = "? ";
 
             string expected = "are";
             string actual;
@@ -94,8 +94,37 @@ namespace UnitTestCustomListProj
             myList.Add(how);
             myList.Add(are);
             myList.Add(you);
+            myList.Add(questionMark);
+            
+            actual = myList[3];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Add_StringToList_DisplayStringOfIndex4()
+        {
+            //Arrange - variables, objects, etc.
+            CustomList<int> myList = new CustomList<int>();
+            string hello = "Hello";
+            string comma = ", ";
+            string how = "How";
+            string are = "are";
+            string you = "you";
+            string quetionMark = "? ";
+
+            int expected = 4;
+            int actual;
+
+
+            //Act
+            myList.Add(hello);
+            myList.Add(comma);
+            myList.Add(how);
+            myList.Add(are);
+            myList.Add(you);
             myList.Add(quetionMark);
-            actual = myList.Count.ToString();
+            actual = myList[4].name;
 
             //Assert
             Assert.AreEqual(expected, actual);
