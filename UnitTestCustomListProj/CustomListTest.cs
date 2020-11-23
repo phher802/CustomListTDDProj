@@ -73,7 +73,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Add_StringToList_DisplayStringOfIndex3()
+        public void Add_StringToList_CapacityOf8()
         {
             //Arrange - variables, objects, etc.
             CustomList<string> myList = new CustomList<string>();
@@ -84,8 +84,8 @@ namespace UnitTestCustomListProj
             string you = "you";
             string questionMark = "? ";
 
-            string expected = "are";
-            string actual;
+            int expected = 8;
+            int actual;
 
 
             //Act
@@ -96,7 +96,8 @@ namespace UnitTestCustomListProj
             myList.Add(you);
             myList.Add(questionMark);
 
-            actual = myList[3];
+            actual = myList.Capacity;
+
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -131,4 +132,5 @@ namespace UnitTestCustomListProj
         //    Assert.AreEqual(expected, actual);
         //}
     }
-    }
+}
+    
