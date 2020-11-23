@@ -47,7 +47,7 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Add_PostiveInteger_CapacityOf5()
+        public void Add_PostiveInteger_CapacityOf8()
         {
             //Arrange - variables, objects, etc.
             CustomList<int> myList = new CustomList<int>();
@@ -56,7 +56,7 @@ namespace UnitTestCustomListProj
             int value3 = 9;
             int value4 = 9;
             int value5 = 9;
-            int expected = 5;
+            int expected = 8;
             int actual;
 
 
@@ -81,7 +81,7 @@ namespace UnitTestCustomListProj
             string comma = ", ";
             string how = "How";
             string are = "are";
-            string you  = "you";
+            string you = "you";
             string questionMark = "? ";
 
             string expected = "are";
@@ -95,40 +95,40 @@ namespace UnitTestCustomListProj
             myList.Add(are);
             myList.Add(you);
             myList.Add(questionMark);
-            
+
             actual = myList[3];
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        [TestMethod]
-        public void Add_DoesListContainYou_True()
-        {
-            //Arrange - variables, objects, etc.
-            CustomList<string> myList = new CustomList<string>();
-            string hello = "Hello";
-            string comma = ", ";
-            string how = "How";
-            string are = "are";
-            string you = "you";
-            string quetionMark = "? ";
+        //[TestMethod]
+        //public void Add_WhatIndexHoldsYou_index4()
+        //{
+        //    //Arrange - variables, objects, etc.
+        //    CustomList<string> myList = new CustomList<string>();
+        //    string hello = "Hello";
+        //    string comma = ", ";
+        //    string how = "How";
+        //    string are = "are";
+        //    string you = "you";
+        //    string quetionMark = "? ";
 
-            bool expected = true;
-            bool actual;
+        //    int expected = 4;
+        //    int actual;
 
 
-            //Act
-            myList.Add(hello);
-            myList.Add(comma);
-            myList.Add(how);
-            myList.Add(are);
-            myList.Add(you);
-            myList.Add(quetionMark);
-            
-            actual = myList.ContainsString("you");
+        //    //Act
+        //    myList.Add(hello);
+        //    myList.Add(comma);
+        //    myList.Add(how);
+        //    myList.Add(are);
+        //    myList.Add(you);
+        //    myList.Add(quetionMark);
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    actual = myList.Contains("you");
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
-}
+    }
