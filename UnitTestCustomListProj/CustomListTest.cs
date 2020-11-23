@@ -156,7 +156,7 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Remove_PositiveInteger_CountOf2()
+        public void Remove_PositiveInteger_CountOf1()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
@@ -165,14 +165,17 @@ namespace UnitTestCustomListProj
             int value3 = 6;
            
             
-            int expeted = 3;
+            int expeted = 0;
             int actual;
 
             //Act
             myList.Add(value1);
             myList.Add(value2);
             myList.Add(value3);
-            actual = myList.Remove;
+            myList.Remove(value1);
+            myList.Remove(value2);
+
+            actual = myList.Count;
 
             // Assert
             Assert.AreEqual(expeted, actual);
