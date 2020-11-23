@@ -12,12 +12,13 @@ namespace CustomListProj
         T[] _items;
         public int Count;
         public int Capacity;
+      
 
         //constructor
         public CustomList()
         {
             Count = 0;
-            Capacity = 4;
+            Capacity = 8;
             _items = new T[Capacity];
         }
 
@@ -28,6 +29,7 @@ namespace CustomListProj
             Count++;
         }
         
+    
     }
 
 }
