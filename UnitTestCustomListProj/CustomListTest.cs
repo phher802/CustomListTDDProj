@@ -239,7 +239,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Remove_ListFromAnotherList_CapacityOf4()
+        public void Remove_IntegerListFromAnotherList_CapacityOf4()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
@@ -272,7 +272,39 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void Remove_IntegerAndString_CountOf4()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value1 = 2;
+            int value2 = 4;
+            int value3 = 6;
 
+            CustomList<string> myStringList = new CustomList<string>();
+            string hello = "hello";
+            string beautiful = "beautiful";
+            string world = "world";
+
+
+            int expeted = 4;
+            int actual;
+
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+            myStringList.Add(hello);
+            myStringList.Add(beautiful);
+            myStringList.Add(world);
+            myList.Remove(value1);
+            myStringList.Remove(beautiful);
+
+            actual = myList.Count + myStringList.Count;
+
+            // Assert
+            Assert.AreEqual(expeted, actual);
+        }
     }
 
 }
