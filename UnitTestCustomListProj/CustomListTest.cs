@@ -102,10 +102,10 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Add_StringToList_DisplayStringOfIndex4()
+        public void Add_DoesListContainYou_True()
         {
             //Arrange - variables, objects, etc.
-            CustomList<int> myList = new CustomList<int>();
+            CustomList<string> myList = new CustomList<string>();
             string hello = "Hello";
             string comma = ", ";
             string how = "How";
@@ -113,8 +113,8 @@ namespace UnitTestCustomListProj
             string you = "you";
             string quetionMark = "? ";
 
-            int expected = 4;
-            int actual;
+            bool expected = true;
+            bool actual;
 
 
             //Act
@@ -124,7 +124,8 @@ namespace UnitTestCustomListProj
             myList.Add(are);
             myList.Add(you);
             myList.Add(quetionMark);
-            actual = myList[4].name;
+            
+            actual = myList.ContainsString("you");
 
             //Assert
             Assert.AreEqual(expected, actual);
