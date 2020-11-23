@@ -102,35 +102,29 @@ namespace UnitTestCustomListProj
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        //[TestMethod]
-        //public void Add_WhatIndexHoldsYou_index4()
-        //{
-        //    //Arrange - variables, objects, etc.
-        //    CustomList<string> myList = new CustomList<string>();
-        //    string hello = "Hello";
-        //    string comma = ", ";
-        //    string how = "How";
-        //    string are = "are";
-        //    string you = "you";
-        //    string quetionMark = "? ";
+        [TestMethod]
+        public void Add_StringToList_CountOf2()
+        {
+            //Arrange - variables, objects, etc.
+            CustomList<string> myList = new CustomList<string>();
+            string hello = "Hello ";
+            string world = "World ";
+       
 
-        //    int expected = 4;
-        //    int actual;
+            int expected = 2;
+            int actual;
 
 
-        //    //Act
-        //    myList.Add(hello);
-        //    myList.Add(comma);
-        //    myList.Add(how);
-        //    myList.Add(are);
-        //    myList.Add(you);
-        //    myList.Add(quetionMark);
+            //Act
+            myList.Add(hello);
+            myList.Add(world);
 
-        //    actual = myList.Contains("you");
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            actual = myList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
     
