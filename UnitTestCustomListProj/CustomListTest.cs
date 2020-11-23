@@ -109,7 +109,7 @@ namespace UnitTestCustomListProj
             CustomList<string> myList = new CustomList<string>();
             string hello = "Hello ";
             string world = "World ";
-       
+
 
             int expected = 2;
             int actual;
@@ -125,6 +125,53 @@ namespace UnitTestCustomListProj
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_TwoLists_CountOf4()
+        {
+            //Arrange - variables, objects, etc.
+            CustomList<string> myList = new CustomList<string>();
+            string hello = "Hello ";
+            string world = "World ";
+
+            CustomList<string> myOtherList = new CustomList<string>();
+            string how = "how";
+            string beautiful = "beautiful";
+
+
+            int expected = 4;
+            int actual;
+
+
+            //Act
+            myList.Add(hello);
+            myList.Add(world);
+            myOtherList.Add(how);
+            myOtherList.Add(beautiful);
+
+
+            actual = myList.Count + myOtherList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_PositiveInteger_CountOf5()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value1 = 2;
+            int value2 = 4;
+            int value3 = 6;
+            int value4 = 8; 
+
+            //Act
+
+
+            // Assert
+        }
+
+       
     }
 }
     
