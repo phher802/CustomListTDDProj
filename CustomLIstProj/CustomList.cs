@@ -28,10 +28,17 @@ namespace CustomListProj
         {
             _items[Count] = valueToAdd;
             Count++;
-
+                 
 
         }
         
+        public void Remove(T valueToRemove)
+        {
+            _items[Count] = valueToRemove;
+            Count--;
+            
+
+        }
     
     }
 
