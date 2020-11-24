@@ -11,7 +11,7 @@ namespace CustomListProj
         static void Main(string[] args)
         {
             CustomList<string> customList = new CustomList<string>();
-
+            
 
         }
     }

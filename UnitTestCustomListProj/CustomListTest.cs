@@ -360,7 +360,7 @@ namespace UnitTestCustomListProj
             int value2 = 6;
             int value3 = 9;
             int value4 = 12;
-        
+
 
 
             int expected = 3;
@@ -387,7 +387,7 @@ namespace UnitTestCustomListProj
             int value1 = 1;
             int value2 = 2;
             int value3 = 3;
-        
+
 
             int expected = 4;
             int actual;
@@ -413,10 +413,10 @@ namespace UnitTestCustomListProj
             int value1 = 2;
             int value2 = 4;
             int value3 = 6;
-         
 
 
-            int expected = 6;
+
+            int expected = 0;
             int actual;
 
             //Act
@@ -424,7 +424,9 @@ namespace UnitTestCustomListProj
             myList.Add(value2);
             myList.Add(value3);
 
-            myList.Remove[1];
+            //myList.Remove(value1);
+
+            actual = myList[5];
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -432,7 +434,7 @@ namespace UnitTestCustomListProj
         }
     }
 
-    }
-
 }
+
+
 
