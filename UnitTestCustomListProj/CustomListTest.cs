@@ -453,8 +453,39 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
 
-    
+        [TestMethod]
+        public void ToString_ConvertContentsToString_()
+        {
+            CustomList<string> myList = new CustomList<string>();
+
+           
+            string fName = "Ana";
+            string lName = "Green";
+            string word1 = "is";
+            int age = 2;
+            string word2 = "years";
+            string word3 = "old";
+
+
+            string expected = "Ana Green is 2 years old";
+            string actual;
+
+            //Act
+           
+            myList.Add(fName);
+            myList.Add(lName);
+            myList.Add(word1);
+            myList.Add(age);
+            myList.Add(word2);
+            myList.Add(word3);
+
+            actual = myList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
+
+    }
 
     }
 
