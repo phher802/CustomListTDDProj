@@ -12,7 +12,6 @@ namespace CustomListProj
         {
             CustomList<string> customList = new CustomList<string>();
 
-            CustomListProj customList = new CustomListProj();
 
         }
     }
