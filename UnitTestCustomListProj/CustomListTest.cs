@@ -352,7 +352,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Indexer_AccessIntegerAtIndex_IndexZeroIs3()
+        public void Indexer_GetIntegerAtIndex_IndexZeroIs3()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
@@ -380,7 +380,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Indexer_SetIntegerValue_Index3Is4()
+        public void Indexer_SetAccessorWithInteger_Index3Is4()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
@@ -403,6 +403,32 @@ namespace UnitTestCustomListProj
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Indexer_EnsureUserCannotAccessOutOfBound_OutOfBound()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value1 = 2;
+            int value2 = 4;
+            int value3 = 6;
+         
+
+
+            int expected = 6;
+            int actual;
+
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+
+            myList.Remove[1];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
         }
     }
 
