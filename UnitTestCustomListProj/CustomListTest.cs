@@ -324,8 +324,33 @@ namespace UnitTestCustomListProj
 
               // Assert
               Assert.AreEqual(expected, actual);
-
         }
+
+        [TestMethod]
+        public void Indexer_SetStringIndex_IndexFourIsParrot()
+        {
+            CustomList<string> birdList = new CustomList<string>();    
+                
+            string value1 = "Flamingo";
+            string value2 = "PUffin";
+            string value3 = "Peacock";
+
+            string expected = "Parrot";
+            string actual;
+
+            // Act
+            birdList.Add(value1);
+            birdList.Add(value2);
+            birdList.Add(value3);
+
+            birdList[4] = "Parrot";
+
+            actual = birdList[4];
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+    }
 
     }
 
