@@ -1,5 +1,6 @@
 ﻿using System;
 using CustomListProj;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestCustomListProj
@@ -247,10 +248,8 @@ namespace UnitTestCustomListProj
             int value2 = 4;
             int value3 = 6;
             int value4 = 8;
-
-            CustomList<int> my2ndList = new CustomList<int>();
-            int value5 = 1;
-            int value6 = 3;
+            int value5 = 10;
+            int value6 = 12;
 
 
             int expected = 4;
@@ -261,30 +260,27 @@ namespace UnitTestCustomListProj
             myList.Add(value2);
             myList.Add(value3);
             myList.Add(value4);
-            my2ndList.Add(value5);
-            my2ndList.Add(value6);
+            myList.Add(value5);
+            myList.Add(value6);
             myList.Remove(value1);
             myList.Remove(value2);
 
-            actual = myList.Capacity + my2ndList.Capacity;
+            actual = myList.Capacity;
 
             // Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Remove_IntegerAndString_CountOf4()
+        public void Remove_PositiveInteger_CountOf4()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
             int value1 = 2;
             int value2 = 4;
             int value3 = 6;
-
-            CustomList<string> myStringList = new CustomList<string>();
-            string hello = "hello";
-            string beautiful = "beautiful";
-            string world = "world";
+            int value4 = 8;
+            int value5 = 10;
 
 
             int expeted = 4;
@@ -294,13 +290,12 @@ namespace UnitTestCustomListProj
             myList.Add(value1);
             myList.Add(value2);
             myList.Add(value3);
-            myStringList.Add(hello);
-            myStringList.Add(beautiful);
-            myStringList.Add(world);
+            myList.Add(value4);
+            myList.Add(value5);
             myList.Remove(value1);
-            myStringList.Remove(beautiful);
 
-            actual = myList.Count + myStringList.Count;
+
+            actual = myList.Count;
 
             // Assert
             Assert.AreEqual(expeted, actual);
