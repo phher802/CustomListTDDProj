@@ -283,7 +283,7 @@ namespace UnitTestCustomListProj
             int value5 = 10;
 
 
-            int expeted = 3;
+            int expected = 3;
             int actual;
 
             //Act
@@ -299,7 +299,7 @@ namespace UnitTestCustomListProj
             actual = myList.Count;
 
             // Assert
-            Assert.AreEqual(expeted, actual);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -322,15 +322,15 @@ namespace UnitTestCustomListProj
 
             actual = myList[2];
 
-              // Assert
-              Assert.AreEqual(expected, actual);
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void Indexer_SetStringIndex_IndexFourIsParrot()
         {
-            CustomList<string> birdList = new CustomList<string>();    
-                
+            CustomList<string> birdList = new CustomList<string>();
+
             string value1 = "Flamingo";
             string value2 = "PUffin";
             string value3 = "Peacock";
@@ -348,6 +348,60 @@ namespace UnitTestCustomListProj
             actual = birdList[4];
 
             // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Indexer_AccessIntegerAtIndex_IndexZeroIs3()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value1 = 3;
+            int value2 = 6;
+            int value3 = 9;
+            int value4 = 12;
+        
+
+
+            int expected = 3;
+            int actual;
+
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+
+            actual = myList[0];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Indexer_SetIntegerValue_Index3Is4()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int value3 = 3;
+        
+
+            int expected = 4;
+            int actual;
+
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+
+            myList[3] = 4;
+
+            actual = myList[3];
+
+            //Assert
             Assert.AreEqual(expected, actual);
         }
     }
