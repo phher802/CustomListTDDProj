@@ -164,8 +164,8 @@ namespace UnitTestCustomListProj
             int value1 = 2;
             int value2 = 4;
             int value3 = 6;
-           
-            
+
+
             int expected = 1;
             int actual;
 
@@ -220,7 +220,7 @@ namespace UnitTestCustomListProj
             string value2 = "Turkey";
             string value3 = "Day";
             string value4 = "Everyone";
-           
+
             int expected = 1;
             int actual;
 
@@ -301,6 +301,32 @@ namespace UnitTestCustomListProj
             // Assert
             Assert.AreEqual(expeted, actual);
         }
+
+        [TestMethod]
+        public void Indexer_AccessStringViaIndex_StringAtIndex2IsLion()
+        {
+            //Arrange
+            CustomList<string> myList = new CustomList<string>();
+
+            string value1 = "leopard";
+            string value2 = "tiger";
+            string value3 = "lion";
+
+            string expected = "lion";
+            string actual;
+
+            // Act
+            myList.Add(value1);
+            myList.Add(value2);
+            myList.Add(value3);
+
+            actual = myList[2];
+
+              // Assert
+              Assert.AreEqual(expected, actual);
+
+        }
+
     }
 
 }
