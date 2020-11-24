@@ -414,8 +414,6 @@ namespace UnitTestCustomListProj
             int value2 = 4;
             int value3 = 6;
 
-
-
             int expected = 0;
             int actual;
 
@@ -424,14 +422,40 @@ namespace UnitTestCustomListProj
             myList.Add(value2);
             myList.Add(value3);
 
-            //myList.Remove(value1);
-
+         
             actual = myList[5];
 
             //Assert
             Assert.AreEqual(expected, actual);
-
+            //unusre if this test is correctly testing out of bournd
         }
+
+        [TestMethod]
+        public void ToString_ConvertContentsToString_ReturnStringSentence()
+        {
+            CustomList<string> myList = new CustomList<string>();
+
+            int age = 2;
+            string fName = "Ana";
+            string lName = "Green";
+
+            string expected = "Ana Green is 2 years old.";
+            string actual;
+
+            //Act
+            myList.Add(age);
+            myList.Add(fName);
+            myList.Add(lName);
+
+            actual = fName + lName + "is " + age + " years old.";
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+    
+        }
+
     }
 
 }
