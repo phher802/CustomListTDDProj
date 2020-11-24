@@ -454,37 +454,52 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void ToString_ConvertContentsToString_()
+        public void ToString_ConvertContentsToString_ReturnIntToString()
         {
-            CustomList<string> myList = new CustomList<string>();
+            CustomList<string> studentID = new CustomList<string>();
 
-           
-            string fName = "Ana";
-            string lName = "Green";
-            string word1 = "is";
-            int age = 2;
-            string word2 = "years";
-            string word3 = "old";
+            int id = 128885;
+            int grade = 10;
+            string fName = "TonyTony";
+            string lName = "Chopper";
 
-
-            string expected = "Ana Green is 2 years old";
+            string expected = "128885 10 TonyTony Chopper";
             string actual;
 
             //Act
            
-            myList.Add(fName);
-            myList.Add(lName);
-            myList.Add(word1);
-            myList.Add(age);
-            myList.Add(word2);
-            myList.Add(word3);
+            studentID.Add(id);
+            studentID.Add(grade);
+            studentID.Add(fName);
+            studentID.Add(lName);
 
-            actual = myList.ToString();
+
+           
+            actual = studentID.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void ToString_ConvertIntegerToString_()
+        {
+            CustomList<int> myList = new CustomList<int>();
+
+            int value1 = 1234;
+            int value2 = 5678;
+
+            int expected = 12345678;
+            int actual;
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+
+            actual = myList.ToString();
+
+            Assert.AreEqual(expected, actual);
+        }
+      
     }
 
     }
