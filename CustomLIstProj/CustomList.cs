@@ -12,43 +12,65 @@ namespace CustomListProj
         T[] _items;
         public int Count;
         public int Capacity;
-        
+
 
         //constructor
         public CustomList()
         {
             Count = 0;
-            Capacity = 100;
+            Capacity = 3;
             _items = new T[Capacity];
 
         }
 
         public void TrimExcess(T[] list)
         {
-            int threshold = (int)(((double)_items.Length) * 0.9);
+            int threshold = (int)(((double)Capacity) * 0.9);
             if (Count < threshold)
             {
                 Capacity = Count;
             }
         }
 
-        
+
         // methods
         public void Add(T valueToAdd)
         {
+
+
+            if (Count == Capacity)
+            {
+                //Capacity *= 2;
+
+               ExpandArray(Capacity * 2);
+            }
+
             _items[Count] = valueToAdd;
             Count++;
-            TrimExcess(_items);
+            //same as capacity = capacity * 2;
 
+            //TrimExcess(_items);
 
+        }
+        public void ExpandArray(int newSize)
+        {
+            T[] newArray = new T[newSize];
 
+            for (int i = 0; i < Count; i++)
+            {
+                newArray[i] = _items[i];
+            }
+
+            Capacity = newSize;
+            _items = newArray;
+            
         }
 
         public void Remove(T valueToRemove)
         {
             _items[Count] = valueToRemove;
             Count--;
-            TrimExcess(_items);
+            //TrimExcess(_items);
 
         }
 
@@ -57,30 +79,29 @@ namespace CustomListProj
         {
             get
             {
-                if (i >= 0 && i < _items.Length)
+                if (i >= 0 && i < Count)
                 { return _items[i]; }
-                return default(T);
+                throw new ArgumentOutOfRangeException();
             }
             set
             {
-                if (i >= 0 && i < _items.Length)
+                if (i >= 0 && i < Count)
                 { _items[i] = value; }
+                throw new ArgumentOutOfRangeException();
             }
         }
 
         public override string ToString()
         {
-            string value = " ";
+            string value = "";
 
-            foreach (T item in _items)
+
+            for (int i = 0; i < Count; i++)
             {
 
-                value += item.ToString();
-                Console.WriteLine(value);
+                value += _items[i].ToString();
 
             }
-
-
 
 
 

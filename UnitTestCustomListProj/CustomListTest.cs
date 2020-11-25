@@ -57,7 +57,7 @@ namespace UnitTestCustomListProj
             int value3 = 9;
             int value4 = 9;
             int value5 = 9;
-            int expected = 5;
+            int expected = 6;
             int actual;
 
 
@@ -88,7 +88,6 @@ namespace UnitTestCustomListProj
             int expected = 6;
             int actual;
 
-
             //Act
             myList.Add(hello);
             myList.Add(comma);
@@ -98,7 +97,6 @@ namespace UnitTestCustomListProj
             myList.Add(questionMark);
 
             actual = myList.Capacity;
-
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -404,8 +402,25 @@ namespace UnitTestCustomListProj
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Example()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+
+
+            //Act
+
+            var something = myList[340];
+
+
+            //Assert
+
+        }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Indexer_EnsureUserCannotAccessOutOfBound_OutOfBound()
         {
             //Arrange
@@ -439,7 +454,7 @@ namespace UnitTestCustomListProj
             double value2 = 3.6;
 
 
-            string expected = "2.5 3.6";
+            string expected = "2.53.6";
             string actual;
 
             //Act
@@ -465,7 +480,7 @@ namespace UnitTestCustomListProj
 
             //Act
             myList.Add(id);
-
+            
             actual = myList.ToString();
 
             //Assert
