@@ -12,7 +12,7 @@ namespace CustomListProj
         T[] _items;
         public int Count;
         public int Capacity;
-         
+
 
         //constructor
         public CustomList()
@@ -20,8 +20,6 @@ namespace CustomListProj
             Count = 0;
             Capacity = 8;
             _items = new T[Capacity];
-
-            
 
         }
 
@@ -39,10 +37,9 @@ namespace CustomListProj
             _items[Count] = valueToRemove;
             Count--;
 
-
         }
 
-      
+
         public T this[int i]
         {
             get
@@ -51,14 +48,32 @@ namespace CustomListProj
                 { return _items[i]; }
                 return default(T);
             }
-            set 
+            set
             {
                 if (i >= 0 && i < _items.Length)
                 { _items[i] = value; }
             }
         }
 
+        public override string ToString()
+        {
+            string value = " ";
 
+            foreach (T item in _items)
+            {
+
+                value += item.ToString();
+                Console.WriteLine(value);
+
+            }
+
+
+
+
+
+            return value;
+
+        }
 
     }
 

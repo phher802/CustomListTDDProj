@@ -422,7 +422,7 @@ namespace UnitTestCustomListProj
             myList.Add(value2);
             myList.Add(value3);
 
-         
+
             actual = myList[5];
 
             //Assert
@@ -433,22 +433,21 @@ namespace UnitTestCustomListProj
         [TestMethod]
         public void ToString_ConvertContentsToString_ReturnStringSentence()
         {
-            CustomList<string> myList = new CustomList<string>();
+            CustomList<double> myList = new CustomList<double>();
 
-            int age = 2;
-            string fName = "Ana";
-            string lName = "Green";
+            double value1 = 2.5;
+            double value2 = 3.6;
 
-            string expected = "Ana Green is 2 years old.";
+
+            string expected = "2.5 3.6";
             string actual;
 
             //Act
-            myList.Add(age);
-            myList.Add(fName);
-            myList.Add(lName);
+            myList.Add(value1);
+            myList.Add(value2);
 
-            actual = fName + lName + "is " + age + " years old.";
 
+            actual = myList.ToString();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -456,26 +455,18 @@ namespace UnitTestCustomListProj
         [TestMethod]
         public void ToString_ConvertContentsToString_ReturnIntToString()
         {
-            CustomList<string> studentID = new CustomList<string>();
+            // Arrange
+            CustomList<int> myList = new CustomList<int>();
 
-            int id = 128885;
-            int grade = 10;
-            string fName = "TonyTony";
-            string lName = "Chopper";
+            int id = 44559;
 
-            string expected = "128885 10 TonyTony Chopper";
+            string expected = "44559";
             string actual;
 
             //Act
-           
-            studentID.Add(id);
-            studentID.Add(grade);
-            studentID.Add(fName);
-            studentID.Add(lName);
+            myList.Add(id);
 
-
-           
-            actual = studentID.ToString();
+            actual = myList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -489,8 +480,8 @@ namespace UnitTestCustomListProj
             int value1 = 1234;
             int value2 = 5678;
 
-            int expected = 12345678;
-            int actual;
+            string expected = "12345678";
+            string actual;
             //Act
             myList.Add(value1);
             myList.Add(value2);
@@ -499,12 +490,12 @@ namespace UnitTestCustomListProj
 
             Assert.AreEqual(expected, actual);
         }
-      
-    }
 
     }
 
 }
+
+
 
 
 
