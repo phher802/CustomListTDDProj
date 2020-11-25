@@ -12,22 +12,34 @@ namespace CustomListProj
         T[] _items;
         public int Count;
         public int Capacity;
-
+        
 
         //constructor
         public CustomList()
         {
             Count = 0;
-            Capacity = 8;
+            Capacity = 100;
             _items = new T[Capacity];
 
         }
 
+        public void TrimExcess(T[] list)
+        {
+            int threshold = (int)(((double)_items.Length) * 0.9);
+            if (Count < threshold)
+            {
+                Capacity = Count;
+            }
+        }
+
+        
         // methods
         public void Add(T valueToAdd)
         {
             _items[Count] = valueToAdd;
             Count++;
+            TrimExcess(_items);
+
 
 
         }
@@ -36,6 +48,7 @@ namespace CustomListProj
         {
             _items[Count] = valueToRemove;
             Count--;
+            TrimExcess(_items);
 
         }
 

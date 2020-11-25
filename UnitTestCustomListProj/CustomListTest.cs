@@ -57,7 +57,7 @@ namespace UnitTestCustomListProj
             int value3 = 9;
             int value4 = 9;
             int value5 = 9;
-            int expected = 8;
+            int expected = 5;
             int actual;
 
 
@@ -85,7 +85,7 @@ namespace UnitTestCustomListProj
             string you = "you";
             string questionMark = "? ";
 
-            int expected = 8;
+            int expected = 6;
             int actual;
 
 
@@ -193,7 +193,7 @@ namespace UnitTestCustomListProj
             int value5 = 10;
 
 
-            int expected = 8;
+            int expected = 3;
             int actual;
 
             //Act
@@ -252,7 +252,7 @@ namespace UnitTestCustomListProj
             int value6 = 12;
 
 
-            int expected = 8;
+            int expected = 4;
             int actual;
 
             //Act
