@@ -10,7 +10,7 @@ namespace CustomListProj
     {
         static void Main(string[] args)
         {
-            CustomList<string> customList = new CustomList<string>();
+            CustomList<int> myList = new CustomList<int>();
             
 
         }
