@@ -481,7 +481,7 @@ namespace UnitTestCustomListProj
 
             //Act
             myList.Add(id);
-            
+
             actual = myList.ToString();
 
             //Assert
@@ -489,7 +489,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void ToString_ConvertIntegerToString_()
+        public void ToString_ConvertIntegerToString_TwoStringsAddedTogether()
         {
             CustomList<int> myList = new CustomList<int>();
 
@@ -507,10 +507,160 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void OverloadOp_AddTwoCustomListTogether_ListIs1859()
+        {
+            //arrange
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+
+            int value1 = 1;
+            int value2 = 5;
+            int value3 = 8;
+            int value4 = 9;
+
+            int expected = 1859;
+            int actual;
+
+            //Act
+
+            myListOne.Add(value1);
+            myListOne.Add(value3);
+            myListTwo.Add(value2);
+            myListTwo.Add(value4);
+
+
+            actual = myListOne.Add(myListTwo);
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs111222()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+
+            int value1 = 1;
+            int value2 = 11;
+            int value3 = 2;
+            int value4 = 2;
+            int value5 = 2;
+
+
+            int expected = 111222;
+            int actual;
+
+            //Act
+
+            myListOne.Add(value1);
+            myListOne.Add(value3);
+            myListTwo.Add(value2);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            actual = myListOne.Add(myListTwo);
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs12345()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+
+            int value1 = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int value4 = 4;
+            int value5 = 5;
+
+
+            int expected = 12345;
+            int actual;
+
+            //Act
+
+            myListOne.Add(value4);
+            myListOne.Add(value5);
+            myListTwo.Add(value1);
+            myListTwo.Add(value2);
+            myListTwo.Add(value3);
+
+            actual = myListTwo.Add(myListOne);
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs13579()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+
+            int value1 = 1;
+            int value2 = 3;
+            int value3 = 5;
+            int value4 = 7;
+            int value5 = 9;
+
+
+            int expected = 13579;
+            int actual;
+
+            //Act
+
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListTwo.Add(value3);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            actual = myListOne.Add(myListTwo);
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs336()
+        {
+            CustomList<string> myListOne = new CustomList<string>();
+            CustomList<string> myListTwo = new CustomList<string>();
+
+            string value1 = "3";
+            string value2 = "3";
+            string value3 = "6";
+
+            string expected = "336";
+            string actual;
+
+            //Act
+
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListTwo.Add(value3);
+      
+
+            actual = myListOne.Add(myListTwo);
+
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+        }
     }
-
 }
-
 
 
 
