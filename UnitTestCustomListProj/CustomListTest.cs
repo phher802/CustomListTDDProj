@@ -513,6 +513,7 @@ namespace UnitTestCustomListProj
             //arrange
             CustomList<int> myListOne = new CustomList<int>();
             CustomList<int> myListTwo = new CustomList<int>();
+            CustomList<int> myListThree = new CustomList<int>();
 
             int value1 = 1;
             int value2 = 5;
@@ -529,8 +530,8 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value2);
             myListTwo.Add(value4);
 
-
-            actual = myListOne.Add(myListTwo);
+            myListThree = myListOne + myListTwo;
+            actual = myListThree;
 
 
             //Assert
@@ -562,7 +563,7 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value4);
             myListTwo.Add(value5);
 
-            actual = myListOne.Add(myListTwo);
+            actual = myListOne += myListTwo;
 
             //Assert
 
@@ -594,7 +595,7 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value2);
             myListTwo.Add(value3);
 
-            actual = myListTwo.Add(myListOne);
+            actual = myListTwo += myListOne;
 
             //Assert
 
@@ -603,7 +604,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void OverloadOp_AddTwoCustomListsTogether_ListIs13579()
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs57913()
         {
             CustomList<int> myListOne = new CustomList<int>();
             CustomList<int> myListTwo = new CustomList<int>();
@@ -626,7 +627,7 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value4);
             myListTwo.Add(value5);
 
-            actual = myListOne.Add(myListTwo);
+            actual = myListTwo += myListOne;
 
             //Assert
 
@@ -638,6 +639,7 @@ namespace UnitTestCustomListProj
         {
             CustomList<string> myListOne = new CustomList<string>();
             CustomList<string> myListTwo = new CustomList<string>();
+            CustomList<String> myListOneAndTwo = new CustomList<string>();
 
             string value1 = "3";
             string value2 = "3";
@@ -651,7 +653,7 @@ namespace UnitTestCustomListProj
             myListOne.Add(value1);
             myListOne.Add(value2);
             myListTwo.Add(value3);
-      
+            myListOneAndTwo = myListOne + myListTwo;
 
             actual = myListOne.Add(myListTwo);
 
