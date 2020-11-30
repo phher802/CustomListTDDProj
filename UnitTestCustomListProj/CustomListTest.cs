@@ -191,7 +191,7 @@ namespace UnitTestCustomListProj
             int value5 = 10;
 
 
-            int expected = 4;
+            int expected = 3;
             int actual;
 
             //Act
