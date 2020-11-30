@@ -18,11 +18,12 @@ namespace CustomListProj
         public CustomList()
         {
             Count = 0;
-            Capacity = 3;
+            Capacity = 4;
             _items = new T[Capacity];
 
         }
 
+        //this method was not necessary although would be uselful
         //public void TrimExcess(T[] list)
         //{
         //    int threshold = (int)(((double)Capacity) * 0.9);
@@ -36,7 +37,6 @@ namespace CustomListProj
         // methods
         public void Add(T valueToAdd)
         {
-
 
             if (Count == Capacity)
             {
@@ -68,8 +68,16 @@ namespace CustomListProj
 
         public void Remove(T valueToRemove)
         {
+          
+       
             _items[Count] = valueToRemove;
-            Count--;
+                Count--;
+
+            while(Count < Capacity)
+            {
+                Capacity--;
+            }
+
             //TrimExcess(_items);
 
         }
