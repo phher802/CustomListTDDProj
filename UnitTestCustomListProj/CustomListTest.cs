@@ -171,7 +171,7 @@ namespace UnitTestCustomListProj
             myList.Add(value1);
             myList.Add(value2);
             myList.Add(value3);
-            myList.Remove(value1);
+            myList.Remove(value3);
             myList.Remove(value2);
 
             actual = myList.Count;
@@ -191,7 +191,7 @@ namespace UnitTestCustomListProj
             int value5 = 10;
 
 
-            int expected = 3;
+            int expected = 8;
             int actual;
 
             //Act
@@ -227,9 +227,9 @@ namespace UnitTestCustomListProj
             myList.Add(value2);
             myList.Add(value3);
             myList.Add(value4);
+            myList.Remove(value1);
             myList.Remove(value2);
             myList.Remove(value3);
-            myList.Remove(value4);
 
             actual = myList.Count;
 
@@ -238,7 +238,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Remove_IntegerFromList_CapacityOf4()
+        public void Remove_IntegerFromList_CapacityOf8()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
@@ -250,7 +250,7 @@ namespace UnitTestCustomListProj
             int value6 = 12;
 
 
-            int expected = 4;
+            int expected = 8;
             int actual;
 
             //Act
@@ -279,7 +279,6 @@ namespace UnitTestCustomListProj
             int value3 = 6;
             int value4 = 8;
             int value5 = 10;
-
 
             int expected = 3;
             int actual;

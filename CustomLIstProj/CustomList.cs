@@ -14,6 +14,8 @@ namespace CustomListProj
         public int Capacity;
 
 
+
+
         //constructor
         public CustomList()
         {
@@ -42,7 +44,7 @@ namespace CustomListProj
             {
                 //Capacity *= 2;
 
-               ExpandArray(Capacity * 2);
+                ExpandArray(Capacity * 2);
             }
 
             _items[Count] = valueToAdd;
@@ -63,24 +65,37 @@ namespace CustomListProj
 
             Capacity = newSize;
             _items = newArray;
+
+        }
+
+        public void Remove(T valueToRemove) //6
+        {
+            
+            bool isFound = false;
+
+            for (int i = 0; i < Count + 1; i++)
+            {
+
+                if (isFound == false && _items[i].Equals(valueToRemove))
+                {
+                    //_items[Count] = valueToRemove;
+                    //valueToRemove = _items[i];
+                    Count--;
+                    _items[i] = _items[i + 1];
+                    isFound = true;
+                    //2, 4, 8, 10
+                }
+                else if (isFound == true)
+                {
+                    _items[i] = _items[i + 1];
+                }
+
+
+            }
+
             
         }
 
-        public void Remove(T valueToRemove)
-        {
-          
-       
-            _items[Count] = valueToRemove;
-                Count--;
-
-            while(Count < Capacity)
-            {
-                Capacity--;
-            }
-
-            //TrimExcess(_items);
-
-        }
 
 
         public T this[int i]
@@ -93,7 +108,7 @@ namespace CustomListProj
                 {
                     throw new ArgumentOutOfRangeException();
                 }
-               
+
 
             }
             set
