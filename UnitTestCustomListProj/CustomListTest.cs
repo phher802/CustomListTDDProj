@@ -57,7 +57,7 @@ namespace UnitTestCustomListProj
             int value3 = 9;
             int value4 = 9;
             int value5 = 9;
-            int expected = 6;
+            int expected = 8;
             int actual;
 
 
@@ -85,7 +85,7 @@ namespace UnitTestCustomListProj
             string you = "you";
             string questionMark = "? ";
 
-            int expected = 6;
+            int expected = 8;
             int actual;
 
             //Act
@@ -191,7 +191,7 @@ namespace UnitTestCustomListProj
             int value5 = 10;
 
 
-            int expected = 3;
+            int expected = 4;
             int actual;
 
             //Act
@@ -238,7 +238,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Remove_IntegerFromList_CapacityOf8()
+        public void Remove_IntegerFromList_CapacityOf4()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
@@ -270,7 +270,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void Remove_PositiveInteger_CountOf8()
+        public void Remove_PositiveInteger_CountOf3()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
