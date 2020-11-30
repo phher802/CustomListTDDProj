@@ -395,9 +395,9 @@ namespace UnitTestCustomListProj
             myList.Add(value2);
             myList.Add(value3);
 
-            myList[3] = 4;
+            myList[2] = 4;
 
-            actual = myList[3];
+            actual = myList[2];
 
             //Assert
             Assert.AreEqual(expected, actual);

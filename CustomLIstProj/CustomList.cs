@@ -23,14 +23,14 @@ namespace CustomListProj
 
         }
 
-        public void TrimExcess(T[] list)
-        {
-            int threshold = (int)(((double)Capacity) * 0.9);
-            if (Count < threshold)
-            {
-                Capacity = Count;
-            }
-        }
+        //public void TrimExcess(T[] list)
+        //{
+        //    int threshold = (int)(((double)Capacity) * 0.9);
+        //    if (Count < threshold)
+        //    {
+        //        Capacity = Count;
+        //    }
+        //}
 
 
         // methods
@@ -81,13 +81,21 @@ namespace CustomListProj
             {
                 if (i >= 0 && i < Count)
                 { return _items[i]; }
-                throw new ArgumentOutOfRangeException();
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+               
+
             }
             set
             {
                 if (i >= 0 && i < Count)
                 { _items[i] = value; }
-                throw new ArgumentOutOfRangeException();
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
             }
         }
 
