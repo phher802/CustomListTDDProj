@@ -332,6 +332,7 @@ namespace UnitTestCustomListProj
             string value1 = "Flamingo";
             string value2 = "PUffin";
             string value3 = "Peacock";
+            string value4 = "Seagull";
 
             string expected = "Parrot";
             string actual;
@@ -340,10 +341,11 @@ namespace UnitTestCustomListProj
             birdList.Add(value1);
             birdList.Add(value2);
             birdList.Add(value3);
+            birdList.Add(value4);
 
-            birdList[4] = "Parrot";
+            birdList[3] = "Parrot";
 
-            actual = birdList[4];
+            actual = birdList[3];
 
             // Assert
             Assert.AreEqual(expected, actual);
