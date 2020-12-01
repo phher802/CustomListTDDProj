@@ -12,7 +12,7 @@ namespace CustomListProj
         T[] _items;
         public int Count;
         public int Capacity;
-
+     
 
 
 
@@ -25,6 +25,13 @@ namespace CustomListProj
 
         }
 
+        public CustomList(int num)
+        {
+            Count = 0;
+            Capacity = num;
+            _items = new T[Capacity];
+
+        }
         //this method was not necessary although would be uselful
         //public void TrimExcess(T[] list)
         //{
@@ -138,6 +145,15 @@ namespace CustomListProj
 
             return value;
 
+        }
+        
+        public static CustomList<T> operator +(CustomList<T> a, CustomList<T> b)
+        {
+            CustomList<T> list;
+
+            list = a + b;
+
+            return list;
         }
 
     }
