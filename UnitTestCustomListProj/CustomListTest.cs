@@ -513,15 +513,15 @@ namespace UnitTestCustomListProj
             //arrange
             CustomList<int> myListOne = new CustomList<int>();
             CustomList<int> myListTwo = new CustomList<int>();
-            CustomList<int> myListThree = new CustomList<int>();
+            CustomList<int> myListThree; 
 
             int value1 = 1;
             int value2 = 5;
             int value3 = 8;
             int value4 = 9;
 
-            int expected = 1859;
-            int actual;
+            string expected = "1859";
+            string actual;
 
             //Act
 
@@ -530,9 +530,9 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value2);
             myListTwo.Add(value4);
 
-            myListThree = myListOne + myListTwo;
-            actual = myListThree;
 
+            myListThree = myListOne + myListTwo;
+            actual = myListThree.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -552,8 +552,8 @@ namespace UnitTestCustomListProj
             int value5 = 2;
 
 
-            int expected = 111222;
-            int actual;
+            string expected = "111222";
+            string actual;
 
             //Act
 
@@ -563,8 +563,8 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value4);
             myListTwo.Add(value5);
 
-            actual = myListOne += myListTwo;
-
+            myListOne += myListTwo;
+            actual = myListOne.ToString();
             //Assert
 
             Assert.AreEqual(expected, actual);
@@ -584,8 +584,8 @@ namespace UnitTestCustomListProj
             int value5 = 5;
 
 
-            int expected = 12345;
-            int actual;
+            string expected = "12345";
+            string actual;
 
             //Act
 
@@ -595,8 +595,9 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value2);
             myListTwo.Add(value3);
 
-            actual = myListTwo += myListOne;
+            myListTwo += myListOne;
 
+            actual = myListTwo.ToString();
             //Assert
 
             Assert.AreEqual(expected, actual);
@@ -608,6 +609,7 @@ namespace UnitTestCustomListProj
         {
             CustomList<int> myListOne = new CustomList<int>();
             CustomList<int> myListTwo = new CustomList<int>();
+            CustomList<int> listThree;
 
             int value1 = 1;
             int value2 = 3;
@@ -616,8 +618,8 @@ namespace UnitTestCustomListProj
             int value5 = 9;
 
 
-            int expected = 13579;
-            int actual;
+            string expected = "13579";
+            string actual;
 
             //Act
 
@@ -627,8 +629,8 @@ namespace UnitTestCustomListProj
             myListTwo.Add(value4);
             myListTwo.Add(value5);
 
-            actual = myListTwo += myListOne;
-
+            listThree = myListTwo + myListOne;
+            actual = listThree.ToString();
             //Assert
 
             Assert.AreEqual(expected, actual);
@@ -639,7 +641,7 @@ namespace UnitTestCustomListProj
         {
             CustomList<string> myListOne = new CustomList<string>();
             CustomList<string> myListTwo = new CustomList<string>();
-            CustomList<String> myListOneAndTwo = new CustomList<string>();
+            CustomList<string> myListOneAndTwo;
 
             string value1 = "3";
             string value2 = "3";
@@ -653,9 +655,10 @@ namespace UnitTestCustomListProj
             myListOne.Add(value1);
             myListOne.Add(value2);
             myListTwo.Add(value3);
+
             myListOneAndTwo = myListOne + myListTwo;
 
-            actual = myListOne.Add(myListTwo);
+            actual = myListOneAndTwo.ToString();
 
             //Assert
 
