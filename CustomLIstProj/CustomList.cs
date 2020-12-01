@@ -12,8 +12,6 @@ namespace CustomListProj
         T[] _items;
         public int Count;
         public int Capacity;
-     
-
 
 
         //constructor
@@ -77,7 +75,7 @@ namespace CustomListProj
 
         public void Remove(T valueToRemove) //6
         {
-            
+
             bool isFound = false;
 
             for (int i = 0; i < Count + 1; i++)
@@ -100,7 +98,7 @@ namespace CustomListProj
 
             }
 
-            
+
         }
 
 
@@ -115,7 +113,6 @@ namespace CustomListProj
                 {
                     throw new ArgumentOutOfRangeException();
                 }
-
 
             }
             set
@@ -136,25 +133,33 @@ namespace CustomListProj
 
             for (int i = 0; i < Count; i++)
             {
-
                 value += _items[i].ToString();
-
             }
 
-
-
             return value;
-
         }
-        
-        public static CustomList<T> operator +(CustomList<T> a, CustomList<T> b)
+
+        public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
-            CustomList<T> list;
+            CustomList<T> newList = new CustomList<T>();
+            bool isFirst = false;
 
-            list = a + b;
+       
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                newList.Add(listOne[i]);
+            }
 
-            return list;
+            for (int i = 0; i < listTwo.Count; i++)
+            {
+                newList.Add(listTwo[i]);
+            }
+          
+
+
+            return newList;
         }
+
 
     }
 

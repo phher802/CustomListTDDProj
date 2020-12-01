@@ -524,7 +524,6 @@ namespace UnitTestCustomListProj
             string actual;
 
             //Act
-
             myListOne.Add(value1);
             myListOne.Add(value3);
             myListTwo.Add(value2);
