@@ -672,7 +672,7 @@ namespace UnitTestCustomListProj
             string value3 = "3";
             string value4 = "4";
             
-            string expected = "336";
+            string expected = "12";
             string actual;
 
             //Act
@@ -761,7 +761,7 @@ namespace UnitTestCustomListProj
             int value4 = 6;
             int value5 = 9;
 
-            string expected = "5";
+            string expected = "789";
             string actual;
 
             //Act

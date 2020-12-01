@@ -95,13 +95,9 @@ namespace CustomListProj
                     _items[i] = _items[i + 1];
                 }
 
-
             }
 
-
         }
-
-
 
         public T this[int i]
         {
@@ -142,7 +138,7 @@ namespace CustomListProj
         public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> newList = new CustomList<T>();
-              
+
             for (int i = 0; i < listOne.Count; i++)
             {
                 newList.Add(listOne[i]);
@@ -152,13 +148,93 @@ namespace CustomListProj
             {
                 newList.Add(listTwo[i]);
             }
-          
+
 
             return newList;
         }
+
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> newList = new CustomList<T>();
+
+
+            for (int i = 0; i < listOne.Count; i++)
+            {
+
+                if (listOne.Count == (-listOne.Count))
+                {
+                    newList.Add(listOne[i]);
+
+                }
+          
+                //newList.Add(listOne[i]);
+
+
+                //if (listOne[i].ToString() != listTwo[i].ToString())
+                //{
+                //    newList.Add(listTwo[i]);
+                //}
+
+            }
+
+
+            for (int i = 0; i < listTwo.Count; i++)
+            {
+                if (listTwo.Count != (-listTwo.Count))
+                {
+                    newList.Add(listTwo[i]);
+                }
+                //removeList.Add(listOne[i]);
+                //newList.Add(listOne[i]);
+
+
+                //if (listOne[i].ToString() != listTwo[i].ToString())
+                //{
+                //    newList.Add(listTwo[i]);
+                //}
+
+            }
+
+
+
+            //else if (listOne.Count < listTwo.Count)
+            //{
+            //    for (int i = 0; i < listTwo.Count; i++)
+            //    {
+            //        if (listTwo.Count != -listTwo.Count)
+            //        {
+            //            //removeList.Add(listOne[i]);
+            //            newList.Add(listTwo[i]);
+            //        }
+
+            //        if (newList[i].ToString() != listOne[i].ToString())
+            //        {
+            //            newList.Add(listOne[i]);
+            //        }
+
+            //    }
+
+            //(listOne[i].ToString() != listTwo[i].ToString()
+
+
+
+
+            //}
+            return newList;
+
+
+        }
+
+
+
+
+
+
 
 
     }
 
 }
+
+
 
