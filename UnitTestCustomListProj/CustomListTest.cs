@@ -631,7 +631,6 @@ namespace UnitTestCustomListProj
             //Assert
 
             Assert.AreEqual(expected, actual);
-
         }
         [TestMethod]
         public void OverloadOp_AddTwoCustomListsTogether_ListIs336()
@@ -662,33 +661,152 @@ namespace UnitTestCustomListProj
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void OverloadOp_AddTwoCustomListsTogether_ListIs336()
+        public void Overload_SubtractACustomListFromAnother_ListIs12()
         {
             CustomList<string> myListOne = new CustomList<string>();
             CustomList<string> myListTwo = new CustomList<string>();
-            CustomList<string> myListOneAndTwo;
+            CustomList<string> myListThree;
 
-            string value1 = "3";
-            string value2 = "3";
-            string value3 = "6";
-
+            string value1 = "1";
+            string value2 = "2";
+            string value3 = "3";
+            string value4 = "4";
+            
             string expected = "336";
             string actual;
 
             //Act
-
             myListOne.Add(value1);
             myListOne.Add(value2);
             myListTwo.Add(value3);
+            myListTwo.Add(value4);
 
-            myListOneAndTwo = myListOne + myListTwo;
+            myListThree = myListOne - myListTwo;
 
-            actual = myListOneAndTwo.ToString();
+            actual = myListThree.ToString();
 
             //Assert
-
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Overload_SubtractOneInstanceOfCustomListFromAnother_ListIs4567()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+            CustomList<int> listThree;
+
+            int value1 = 4;
+            int value2 = 5;
+            int value3 = 5;
+            int value4 = 6;
+            int value5 = 7;
+
+            string expected = "4567";
+            string actual;
+
+            //Act
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListTwo.Add(value3);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            listThree = myListOne - myListTwo;
+            actual = listThree.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Overload_SubtractOneInstanceOfCustomListFromAnother_ListIs5()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+            CustomList<int> listThree;
+
+            int value1 = 1;
+            int value2 = 3;
+            int value3 = 5;
+            int value4 = 1;
+            int value5 = 3;
+
+            string expected = "5";
+            string actual;
+
+            //Act
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListTwo.Add(value3);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            listThree = myListOne - myListTwo;
+            actual = listThree.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Overload_SubtractOneInstanceOfCustomListFromAnother_ListIs789()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+          
+
+            int value1 = 6;
+            int value2 = 7;
+            int value3 = 8;
+            int value4 = 6;
+            int value5 = 9;
+
+            string expected = "5";
+            string actual;
+
+            //Act
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListOne.Add(value3);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            myListOne -= myListTwo;
+            actual = myListOne.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Overload_SubtractOneInstanceOfCustomListFromAnother_ListIs123()
+        {
+            CustomList<int> myListOne = new CustomList<int>();
+            CustomList<int> myListTwo = new CustomList<int>();
+
+            int value1 = 1;
+            int value2 = 2;
+            int value3 = 3;
+            int value4 = 4;
+            int value5 = 5;
+
+            string expected = "123";
+            string actual;
+
+            //Act
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListOne.Add(value3);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            myListOne -= myListTwo;
+            actual = myListOne.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
     }
 }
 
