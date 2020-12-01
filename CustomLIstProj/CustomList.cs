@@ -142,9 +142,7 @@ namespace CustomListProj
         public static CustomList<T> operator +(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> newList = new CustomList<T>();
-            bool isFirst = false;
-
-       
+              
             for (int i = 0; i < listOne.Count; i++)
             {
                 newList.Add(listOne[i]);
@@ -155,7 +153,6 @@ namespace CustomListProj
                 newList.Add(listTwo[i]);
             }
           
-
 
             return newList;
         }
