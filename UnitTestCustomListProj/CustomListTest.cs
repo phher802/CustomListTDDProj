@@ -557,8 +557,8 @@ namespace UnitTestCustomListProj
             //Act
 
             myListOne.Add(value1);
-            myListOne.Add(value3);
-            myListTwo.Add(value2);
+            myListOne.Add(value2);
+            myListTwo.Add(value3);
             myListTwo.Add(value4);
             myListTwo.Add(value5);
 
@@ -604,7 +604,7 @@ namespace UnitTestCustomListProj
         }
 
         [TestMethod]
-        public void OverloadOp_AddTwoCustomListsTogether_ListIs57913()
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs13579()
         {
             CustomList<int> myListOne = new CustomList<int>();
             CustomList<int> myListTwo = new CustomList<int>();
@@ -616,8 +616,35 @@ namespace UnitTestCustomListProj
             int value4 = 7;
             int value5 = 9;
 
-
             string expected = "13579";
+            string actual;
+
+            //Act
+            myListOne.Add(value1);
+            myListOne.Add(value2);
+            myListTwo.Add(value3);
+            myListTwo.Add(value4);
+            myListTwo.Add(value5);
+
+            listThree = myListOne + myListTwo;
+            actual = listThree.ToString();
+            //Assert
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void OverloadOp_AddTwoCustomListsTogether_ListIs336()
+        {
+            CustomList<string> myListOne = new CustomList<string>();
+            CustomList<string> myListTwo = new CustomList<string>();
+            CustomList<string> myListOneAndTwo;
+
+            string value1 = "3";
+            string value2 = "3";
+            string value3 = "6";
+
+            string expected = "336";
             string actual;
 
             //Act
@@ -625,15 +652,14 @@ namespace UnitTestCustomListProj
             myListOne.Add(value1);
             myListOne.Add(value2);
             myListTwo.Add(value3);
-            myListTwo.Add(value4);
-            myListTwo.Add(value5);
 
-            listThree = myListTwo + myListOne;
-            actual = listThree.ToString();
+            myListOneAndTwo = myListOne + myListTwo;
+
+            actual = myListOneAndTwo.ToString();
+
             //Assert
 
             Assert.AreEqual(expected, actual);
-
         }
         [TestMethod]
         public void OverloadOp_AddTwoCustomListsTogether_ListIs336()
