@@ -149,7 +149,6 @@ namespace CustomListProj
                 newList.Add(listTwo[i]);
             }
 
-
             return newList;
         }
 
@@ -177,7 +176,6 @@ namespace CustomListProj
 
             }
 
-
             for (int i = 0; i < listTwo.Count; i++)
             {
                 if (listTwo.Count != (-listTwo.Count))
@@ -195,7 +193,7 @@ namespace CustomListProj
 
             }
 
-
+            return newList;
 
             //else if (listOne.Count < listTwo.Count)
             //{
@@ -217,18 +215,10 @@ namespace CustomListProj
             //(listOne[i].ToString() != listTwo[i].ToString()
 
 
-
-
             //}
-            return newList;
 
 
         }
-
-
-
-
-
 
 
 
